@@ -1,4 +1,15 @@
-function hourUpdater() {  var currentHour = moment().hours();
+$(document).ready(function() {
+  $("#saveBtn").on("click", function() {
+    var value = $(this).siblings("description").val();
+    var time = $(this).parent().attr("id");
+
+    localStorage.setItem(time,value);
+  }
+  )
+})
+function hourUpdater() {  
+  
+  var currentHour = moment().hours();
 
 // loop over time blocks
 $(".time-block").each(function() {
